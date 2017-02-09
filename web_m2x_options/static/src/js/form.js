@@ -9,8 +9,7 @@ odoo.define('web_m2x_options.web_m2x_options', function (require) {
         Dialog = require('web.Dialog'),
         Model = require('web.Model'),
         form_relational = require('web.form_relational'),
-        _t  = core._t;
-
+        _t  = core._t; 
     var OPTIONS = ['web_m2x_options.create',
                    'web_m2x_options.create_edit',
                    'web_m2x_options.limit',
@@ -58,14 +57,6 @@ odoo.define('web_m2x_options.web_m2x_options', function (require) {
     FieldMany2One.include({
 
         willStart: function() {
-            if (_.isUndefined(this.options.no_open)) {
-                this.options.no_open = 'True';
-            }
-            else {
-                if (this.options.no_open == 'False' || this.options.no_open == 'false') {
-                    this.options.no_open = false;
-                }
-            }
             return this._super.apply(this, arguments);
         },
 
